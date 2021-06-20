@@ -3,6 +3,80 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BluetoothLeChat.App">
     <Application.Resources>
+        <ResourceDictionary/>
+        <!-- Fonts -->
+        <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesome">
+            <On Platform="Android" Value="fa-solid-900.ttf#Font Awesome 5 Pro Solid" />
+            <On Platform="iOS" Value="FontAwesome5Pro-Solid" />
+        </OnPlatform>
+        <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeLight">
+            <On Platform="Android" Value="fa-light-300.ttf#Font Awesome 5 Pro Light" />
+            <On Platform="iOS" Value="FontAwesome5Pro-Light" />
+        </OnPlatform>
+        <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeRegular">
+            <On Platform="Android" Value="fa-regular-400.ttf#Font Awesome 5 Pro Regular" />
+            <On Platform="iOS" Value="FontAwesome5Pro-Regular" />
+        </OnPlatform>
+        <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeBrands">
+            <On Platform="Android" Value="fa-brands-400.ttf#Font Awesome 5 Brands Regular" />
+            <On Platform="iOS" Value="FontAwesome5Brands-Regular" />
+        </OnPlatform>
+        <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeEncodeSans">
+            <On Platform="Android" Value="EncodeSans-Regular.ttf#Encode Sans" />
+            <On Platform="iOS" Value="EncodeSans-Regular" />
+        </OnPlatform>
+
+        <!--Styles-->
+        <Style x:Key="DefaultLabelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="Medium"/>
+            <Setter Property="FontAttributes" Value="None"/>
+            <Setter Property="FontFamily" Value="{StaticResource FontAwesomeEncodeSans}"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+          </Style>
+
+        <Style x:Key="FontIconLabelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontFamily" Value="{StaticResource FontAwesomeEncodeSans}"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+             <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+          </Style>
+
+          <Style x:Key="HeaderLabelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontFamily" Value="{StaticResource FontAwesomeEncodeSans}"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+          </Style>
+
+         <!--Colors-->
+          <Color x:Key="LoadingColor">#353186</Color>
+          <Color x:Key="TitleStartColor">#8E4585</Color>
+          <Color x:Key="TitleEndColor">#DC143C</Color>
+          <Color x:Key="BackgroundStartColor">#F5F5DC</Color>
+          <Color x:Key="BackgroundEndColor">#DDA0DD</Color> 
+          <Color x:Key="ItemColor">#0067b1</Color>
+          <Color x:Key="PrimaryColor">#7B68EE</Color>
+          <Color x:Key="SecondaryColor">#FAF0E6</Color>
+          <Color x:Key="EnableColor">#228B22</Color>
+          <Color x:Key="DisableColor">#D3D3D3</Color>
+
+        <!--FontIcons-->
+        <x:String x:Key="BluetoothRoundIcon">&#xf293;</x:String>
+        <x:String x:Key="BluetoothIcon">&#xf294;</x:String>
+        <x:String x:Key="PairedIcon">&#xf0c1;</x:String>
+        <x:String x:Key="DeviceIcon">&#xf10b;</x:String>
+
+        <!--Constants-->
+        <x:String x:Key="Cancel">Cancel</x:String>
 
     </Application.Resources>
 </Application>

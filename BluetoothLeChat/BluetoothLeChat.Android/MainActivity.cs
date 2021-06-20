@@ -8,7 +8,10 @@ using Microsoft.AppCenter.Distribute;
 
 namespace BluetoothLeChat.Droid
 {
-    [Activity(Label = "BluetoothLeChat", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
+    [Preserve(AllMembers = true)]
+    [Activity(Label = "BluetoothLeChat", Icon = "@drawable/ic_bluetooth", Theme = "@style/MainTheme", MainLauncher = true,
+        ScreenOrientation = ScreenOrientation.Portrait,
+        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -20,6 +23,7 @@ namespace BluetoothLeChat.Droid
             Distribute.SetEnabledForDebuggableBuild(true);
             LoadApplication(new App());
         }
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);

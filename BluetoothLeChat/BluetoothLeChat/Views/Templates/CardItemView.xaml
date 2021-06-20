@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="BluetoothLeChat.Views.Templates.CardItemView"
+    xmlns:fontIcon="clr-namespace:BluetoothLeChat.Views.Templates"
+    Margin="4,8,4,8" Padding="16,8,16,8"
+    BackgroundColor="Transparent" x:Name="ItemView"
+    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+    <ContentView.GestureRecognizers>
+      <TapGestureRecognizer Command="{Binding ItemSelectedCommand, Source={x:Reference ItemView}}"/>
+    </ContentView.GestureRecognizers>
+    <ContentView.Content>
+       <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="20"
+              BackgroundColor="{StaticResource PrimaryColor}" HasShadow="True">
+          <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ColumnSpacing="0">
+              <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="50"/>
+                  <ColumnDefinition Width="*"/>
+              </Grid.ColumnDefinitions>
+              <fontIcon:FontIcon Icon="{Binding Icon, Source={x:Reference ItemView}}"
+                                 FontIconFamily="{Binding FontIconFamily, Source={x:Reference ItemView}}"
+                                 IconColor="{Binding IconColor, Source={x:Reference ItemView}}"/>
+              <Label Text="{Binding ItemValue, Source={x:Reference ItemView}}" Style="{StaticResource DefaultLabelStyle}"
+                     Grid.Column="1"
+                     HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand"
+                     HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+           </Grid>
+       </Frame>
+    </ContentView.Content>
+</ContentView>

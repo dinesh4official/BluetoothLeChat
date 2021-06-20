@@ -6,6 +6,7 @@ using Microsoft.AppCenter.Crashes;
 using Xamarin.Forms.Internals;
 using BluetoothLeChat.Constants;
 using Microsoft.AppCenter.Distribute;
+using BluetoothLeChat.Views;
 
 namespace BluetoothLeChat
 {
@@ -17,8 +18,7 @@ namespace BluetoothLeChat
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new DashboardPage());
         }
 
         #endregion

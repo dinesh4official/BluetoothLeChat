@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:templates="clr-namespace:BluetoothLeChat.Views.Templates"
+    xmlns:resources="clr-namespace:BluetoothLeChat.Resources"
+    xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    iOS:Page.UseSafeArea="true" NavigationPage.HasNavigationBar="False"
+    x:Class="BluetoothLeChat.Views.DashboardPage">
+    <ContentPage.Content>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <AbsoluteLayout.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="{StaticResource BackgroundStartColor}" Offset="0.1"/>
+                        <GradientStop Color="{StaticResource BackgroundEndColor}" Offset="1.0"/>
+                    </LinearGradientBrush>
+            </AbsoluteLayout.Background>
+            <StackLayout Spacing="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                         Orientation="Horizontal"
+                         AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,0.2">
+                <StackLayout.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="{StaticResource TitleStartColor}" Offset="0.1"/>
+                        <GradientStop Color="{StaticResource TitleEndColor}" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </StackLayout.Background>
+                <Label Text="BluetoothLE Chat" Style="{StaticResource HeaderLabelStyle}" Margin="16,0,0,0"/>
+                <templates:FontIcon Icon="{StaticResource BluetoothRoundIcon}"
+                                    FontIconFamily="{StaticResource FontAwesomeBrands}"
+                                    HorizontalOptions="StartAndExpand"/>
+            </StackLayout>
+            <Frame CornerRadius="20" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                   BackgroundColor="{StaticResource SecondaryColor}" BorderColor="Black" Opacity="0.9"
+                   AbsoluteLayout.LayoutFlags="All" Margin="16,0,16,0"
+                   AbsoluteLayout.LayoutBounds="0.0,0.38,1,0.62">
+              <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="0">
+                <templates:CardItemView Icon="{StaticResource DeviceIcon}"
+                                        FontIconFamily="{StaticResource FontAwesomeRegular}"
+                                        ItemValue="{x:Static resources:AppResources.ScanNewDevices}"/>
+                <templates:CardItemView Icon="{StaticResource PairedIcon}"
+                                        FontIconFamily="{StaticResource FontAwesomeRegular}"
+                                        ItemValue="{x:Static resources:AppResources.PairedDevices}"/>
+              </StackLayout>
+            </Frame>
+            <Frame HeightRequest="60" WidthRequest="60" CornerRadius="30"
+                   HorizontalOptions="Start" VerticalOptions="Start" Margin="0" Padding="0"
+                   AbsoluteLayout.LayoutFlags="PositionProportional" HasShadow="True"
+                   BackgroundColor="{StaticResource EnableColor}"
+                   AbsoluteLayout.LayoutBounds=".95,.95,60,60">
+                <templates:FontIcon Icon="{StaticResource BluetoothIcon}"
+                                    FontIconFamily="{StaticResource FontAwesomeBrands}"/>
+            </Frame>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
