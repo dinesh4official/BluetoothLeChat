@@ -32,6 +32,24 @@
     <string>LaunchScreen</string>
     <key>CFBundleName</key>
     <string>BluetoothLeChat</string>
+    <key>UIBackgroundModes</key>
+    <array>
+    <string>bluetooth-central</string>
+    <string>bluetooth-peripheral</string>
+    </array>
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>BluetoothLeChat wants to access the bluetooth</string>
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>BluetoothLeChat wants to access the bluetooth</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+          <key>CFBundleURLSchemes</key>
+          <array>
+              <string>appcenter-c6b41ce6-4e47-4676-9749-18dab502f608;</string>
+          </array>
+      </dict>
+    </array>
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/AppIcon.appiconset</string>
 </dict>
