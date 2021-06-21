@@ -47,15 +47,69 @@ namespace BluetoothLeChat.Resources {
             }
         }
         
+        internal static string AppName {
+            get {
+                return ResourceManager.GetString("AppName", resourceCulture);
+            }
+        }
+        
         internal static string ScanNewDevices {
             get {
                 return ResourceManager.GetString("ScanNewDevices", resourceCulture);
             }
         }
         
+        internal static string AvailableDevices {
+            get {
+                return ResourceManager.GetString("AvailableDevices", resourceCulture);
+            }
+        }
+        
         internal static string PairedDevices {
             get {
                 return ResourceManager.GetString("PairedDevices", resourceCulture);
+            }
+        }
+        
+        internal static string EnableBluetooth {
+            get {
+                return ResourceManager.GetString("EnableBluetooth", resourceCulture);
+            }
+        }
+        
+        internal static string UnauthorizedState {
+            get {
+                return ResourceManager.GetString("UnauthorizedState", resourceCulture);
+            }
+        }
+        
+        internal static string UnavailableState {
+            get {
+                return ResourceManager.GetString("UnavailableState", resourceCulture);
+            }
+        }
+        
+        internal static string UnknownError {
+            get {
+                return ResourceManager.GetString("UnknownError", resourceCulture);
+            }
+        }
+        
+        internal static string BindableError {
+            get {
+                return ResourceManager.GetString("BindableError", resourceCulture);
+            }
+        }
+        
+        internal static string NoDeviceFound {
+            get {
+                return ResourceManager.GetString("NoDeviceFound", resourceCulture);
+            }
+        }
+        
+        internal static string NoPairedDeviceFound {
+            get {
+                return ResourceManager.GetString("NoPairedDeviceFound", resourceCulture);
             }
         }
     }

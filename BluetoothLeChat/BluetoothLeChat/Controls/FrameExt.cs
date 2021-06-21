@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 using BluetoothLeChat.Constants;
+using BluetoothLeChat.Helper.Utils;
+using BluetoothLeChat.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
@@ -15,7 +17,8 @@ namespace BluetoothLeChat.Controls
         /// Bindable property for <see cref="ItemColor"/>
         /// </summary>
         public static readonly BindableProperty ItemColorProperty =
-             BindableProperty.Create(nameof(ItemColor), typeof(Color), typeof(FrameExt), Color.FromHex("#D3D3D3"),
+             BindableProperty.Create(nameof(ItemColor), typeof(Color), typeof(FrameExt),
+                 AppUtils.GetResourceValueAsColor(AppConstants.DisableColor),
                  propertyChanged: OnItemColorChanged);
 
         #endregion
@@ -58,7 +61,7 @@ namespace BluetoothLeChat.Controls
             }
             else
             {
-                throw new Exception(AppConstants.BindableError);
+                throw new Exception(AppResources.BindableError);
             }
         }
 

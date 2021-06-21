@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using BluetoothLeChat.Constants;
 using BluetoothLeCore.Enum;
 using BluetoothLeCore.Interface;
@@ -30,6 +31,8 @@ namespace BluetoothLeChat.Helper.Utils
         #region Properties
 
         public static BluetoothUtils Instance => lazyInstance.Value;
+
+        public IAdapter Adapter => CrossBluetoothLE.Current.Adapter;
 
         #endregion
 

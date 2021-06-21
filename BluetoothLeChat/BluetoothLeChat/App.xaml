@@ -74,9 +74,7 @@
         <x:String x:Key="BluetoothIcon">&#xf294;</x:String>
         <x:String x:Key="PairedIcon">&#xf0c1;</x:String>
         <x:String x:Key="DeviceIcon">&#xf10b;</x:String>
-
-        <!--Constants-->
-        <x:String x:Key="Cancel">Cancel</x:String>
+        <x:String x:Key="RefreshIcon">&#xf2f9;</x:String>
 
     </Application.Resources>
 </Application>

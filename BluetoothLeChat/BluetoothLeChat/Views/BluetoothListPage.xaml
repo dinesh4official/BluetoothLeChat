@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<view:BasePage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:view ="clr-namespace:BluetoothLeChat.Views"
+    xmlns:resources="clr-namespace:BluetoothLeChat.Resources"
+    xmlns:templates="clr-namespace:BluetoothLeChat.Views.Templates"
+    x:Class="BluetoothLeChat.Views.BluetoothListPage" x:Name="ItemListPage">
+    <view:BasePage.Content>
+      <Grid RowSpacing="0">
+        <Grid.Background>
+             <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="{StaticResource BackgroundStartColor}" Offset="0.2"/>
+                <GradientStop Color="{StaticResource BackgroundEndColor}" Offset="0.8"/>
+                <GradientStop Color="Black" Offset="1.0"/>
+              </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.9*"/>
+        </Grid.RowDefinitions>
+        <Grid ColumnSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+              BackgroundColor="Transparent">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="{StaticResource TitleStartColor}" Offset="0.1"/>
+                    <GradientStop Color="{StaticResource TitleEndColor}" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.8*"/>
+                <ColumnDefinition Width="0.2*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="{Binding PageTitle}" Style="{StaticResource HeaderLabelStyle}"
+                   Margin="16,0,0,0" HorizontalOptions="StartAndExpand"/>
+           <StackLayout Grid.Column="1" Spacing="0" HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand" IsVisible="{Binding ShowToolBar}">
+            <ActivityIndicator x:Name="Indicator" IsVisible="False" IsRunning="False"
+                          Color="White" HorizontalOptions="CenterAndExpand"
+                          VerticalOptions="CenterAndExpand">
+                <ActivityIndicator.Triggers>
+                    <MultiTrigger TargetType="ActivityIndicator">
+                       <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding IsScanning}"
+                               Value="True"/>
+                            <BindingCondition Binding="{Binding IsLoading}"
+                               Value="False"/>
+                       </MultiTrigger.Conditions>
+                       <Setter Property="IsVisible" Value="True"/>
+                       <Setter Property="IsRunning" Value="True"/>
+                    </MultiTrigger>
+                    <MultiTrigger TargetType="ActivityIndicator">
+                       <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding IsScanning}"
+                               Value="False"/>
+                            <BindingCondition Binding="{Binding IsLoading}"
+                               Value="False"/>
+                       </MultiTrigger.Conditions>
+                       <Setter Property="IsVisible" Value="False"/>
+                       <Setter Property="IsRunning" Value="False"/>
+                    </MultiTrigger>
+                </ActivityIndicator.Triggers>
+            </ActivityIndicator>
+            <templates:FontIcon Icon="{StaticResource RefreshIcon}"
+                                FontIconFamily="{StaticResource FontAwesomeRegular}"
+                                IconColor="White" IsVisible="False"
+                                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <templates:FontIcon.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding RefreshCommand}"/>
+                </templates:FontIcon.GestureRecognizers>
+                <templates:FontIcon.Triggers>
+                    <DataTrigger TargetType="{x:Type templates:FontIcon}"
+                                 Binding="{Binding IsVisible, Source={x:Reference Indicator}}"
+                                 Value="True">
+                        <Setter Property="IsVisible" Value="False"/>
+                    </DataTrigger>
+                    <MultiTrigger TargetType="{x:Type templates:FontIcon}">
+                       <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding IsScanning}"
+                               Value="False"/>
+                            <BindingCondition Binding="{Binding IsLoading}"
+                               Value="False"/>
+                       </MultiTrigger.Conditions>
+                       <Setter Property="IsVisible" Value="True"/>
+                    </MultiTrigger>
+                </templates:FontIcon.Triggers>
+             </templates:FontIcon>
+            </StackLayout>
+        </Grid>
+        <CollectionView ItemsSource="{Binding Devices}" SelectionMode="None" Grid.Row="1" 
+                        HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never"
+                        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                        ItemsLayout="VerticalList" BackgroundColor="Transparent">
+            <CollectionView.Triggers>
+                <DataTrigger TargetType="CollectionView" Binding="{Binding IsLoading}"
+                             Value="True">
+                   <Setter Property="IsVisible" Value="False"/>
+                </DataTrigger>
+                <DataTrigger TargetType="CollectionView" Binding="{Binding IsLoading}"
+                             Value="False">
+                   <Setter Property="IsVisible" Value="True"/>
+                </DataTrigger>
+            </CollectionView.Triggers>
+             <CollectionView.EmptyView>
+                <ContentView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                   <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                      <Label Style="{StaticResource DefaultLabelStyle}" FontSize="Title"
+                             TextColor="{StaticResource TitleStartColor}"
+                             HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                          <Label.Triggers>
+                              <DataTrigger TargetType="Label"
+                                           Binding="{Binding BindingContext.ShowToolBar, Source={x:Reference ItemListPage}}"
+                                           Value="True">
+                                  <Setter Property="Text" Value="{x:Static resources:AppResources.NoDeviceFound}"/>
+                              </DataTrigger>
+                              <DataTrigger TargetType="Label"
+                                           Binding="{Binding BindingContext.ShowToolBar, Source={x:Reference ItemListPage}}"
+                                           Value="False">
+                                  <Setter Property="Text" Value="{x:Static resources:AppResources.NoPairedDeviceFound}"/>
+                              </DataTrigger>
+                          </Label.Triggers>
+                       </Label>
+                   </StackLayout>
+                </ContentView>
+              </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                   <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                         Margin="4,8,4,8"
+                         RowSpacing="0" Padding="8,8,8,8">
+                       <templates:CardItemView Icon="{StaticResource DeviceIcon}"
+                                        FontIconFamily="{StaticResource FontAwesomeRegular}"
+                                        ItemValue="{Binding Name}"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+         </CollectionView>
+
+       <!--Indicator-->
+       <ActivityIndicator IsVisible="{Binding IsLoading}" IsRunning="{Binding IsLoading}"
+                          Color="{StaticResource LoadingColor}" HorizontalOptions="CenterAndExpand"
+                          VerticalOptions="CenterAndExpand" Grid.Row="1"/>
+     </Grid>
+    </view:BasePage.Content>
+</view:BasePage>

@@ -5,11 +5,11 @@ using Xamarin.Forms.Internals;
 namespace BluetoothLeChat.Views
 {
     [Preserve(AllMembers = true)]
-    public partial class DashboardPage : BasePage
+    public partial class BluetoothListPage : BasePage
     {
         #region Constructor
 
-        public DashboardPage()
+        public BluetoothListPage()
         {
             InitializeComponent();
         }

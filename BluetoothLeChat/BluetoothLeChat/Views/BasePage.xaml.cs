@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
+using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
 namespace BluetoothLeChat.Views
 {
     [Preserve(AllMembers = true)]
-    public partial class DashboardPage : BasePage
+    public partial class BasePage : ContentPage
     {
         #region Constructor
 
-        public DashboardPage()
+        public BasePage()
         {
             InitializeComponent();
         }

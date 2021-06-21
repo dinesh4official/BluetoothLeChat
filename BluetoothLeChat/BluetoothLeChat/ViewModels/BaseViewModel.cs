@@ -1,6 +1,7 @@
 ﻿using System;
 using BluetoothLeChat.Constants;
 using BluetoothLeChat.Helper.Utils;
+using BluetoothLeChat.Resources;
 using BluetoothLeCore.Enum;
 using BluetoothLeCore.Interface;
 using BluetoothLeCore.Models;
@@ -15,7 +16,7 @@ namespace BluetoothLeChat.ViewModels
         #region Fields
 
         BLEState state;
-        bool isBluetoothON;
+        bool isBluetoothON, isLoading;
 
         #endregion
 
@@ -40,6 +41,18 @@ namespace BluetoothLeChat.ViewModels
 
                 isBluetoothON = value;
                 OnPropertyChanged(nameof(IsBluetoothON));
+            }
+        }
+
+        public bool IsLoading
+        {
+            get => isLoading;
+            set
+            {
+                if (isLoading == value) { return; }
+
+                isLoading = value;
+                OnPropertyChanged(nameof(IsLoading));
             }
         }
 
@@ -81,15 +94,15 @@ namespace BluetoothLeChat.ViewModels
             string message = string.Empty;
             if (state == BLEState.Unauthorized)
             {
-                message = AppConstants.UnauthorizedState;
+                message = AppResources.UnauthorizedState;
             }
             else if (state == BLEState.Unavailable)
             {
-                message = AppConstants.UnavailableState;
+                message = AppResources.UnavailableState;
             }
             else if (state == BLEState.Unknown)
             {
-                message = AppConstants.UnknownError;
+                message = AppResources.UnknownError;
             }
             else if (state == BLEState.TurningOn || state == BLEState.On)
             {

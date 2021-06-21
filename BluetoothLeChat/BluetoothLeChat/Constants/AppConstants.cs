@@ -7,10 +7,7 @@ namespace BluetoothLeChat.Constants
     public static class AppConstants
     {
         public const string BLEStateNotifier = "BLEStateNotifier";
-        public const string UnauthorizedState = "Unauthorized Error with Bluetooth settings";
-        public const string UnavailableState = "Unable to detect the Bluetooth configuration";
-        public const string UnknownError = "Oops, Something Went Wrong";
-        public const string BindableError = "Invalid bindable object is assigned";
+        public const string DisableColor = "DisableColor";
         public const string TouchEffect = "BluetoothLeChat.TouchEffect";
         public const string EffectCommand = "BluetoothLeChat.EffectCommands";
         public const string ChildrenInputTransparent = "ChildrenInputTransparent";

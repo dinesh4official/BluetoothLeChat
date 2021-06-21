@@ -1,18 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<ContentPage
+<view:BasePage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:view ="clr-namespace:BluetoothLeChat.Views"
     xmlns:templates="clr-namespace:BluetoothLeChat.Views.Templates"
     xmlns:resources="clr-namespace:BluetoothLeChat.Resources"
     xmlns:viewModel="clr-namespace:BluetoothLeChat.ViewModels"
     xmlns:control="clr-namespace:BluetoothLeChat.Controls"
-    xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-    iOS:Page.UseSafeArea="true" NavigationPage.HasNavigationBar="False"
     x:Class="BluetoothLeChat.Views.DashboardPage">
-    <ContentPage.BindingContext>
+    <view:BasePage.BindingContext>
         <viewModel:DashboardViewModel/>
-    </ContentPage.BindingContext>
-    <ContentPage.Content>
+    </view:BasePage.BindingContext>
+    <view:BasePage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <AbsoluteLayout.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
@@ -30,7 +29,7 @@
                         <GradientStop Color="{StaticResource TitleEndColor}" Offset="1.0"/>
                     </LinearGradientBrush>
                 </StackLayout.Background>
-                <Label Text="BluetoothLE Chat" Style="{StaticResource HeaderLabelStyle}" Margin="16,0,0,0"/>
+                <Label Text="{x:Static resources:AppResources.AppName}" Style="{StaticResource HeaderLabelStyle}" Margin="16,0,0,0"/>
                 <templates:FontIcon Icon="{StaticResource BluetoothRoundIcon}"
                                     FontIconFamily="{StaticResource FontAwesomeBrands}"
                                     HorizontalOptions="StartAndExpand"/>
@@ -73,5 +72,5 @@
                                     FontIconFamily="{StaticResource FontAwesomeBrands}"/>
             </control:FrameExt>
         </AbsoluteLayout>
-    </ContentPage.Content>
-</ContentPage>
+    </view:BasePage.Content>
+</view:BasePage>

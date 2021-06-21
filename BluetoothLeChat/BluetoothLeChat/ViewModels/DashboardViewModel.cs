@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Input;
 using BluetoothLeChat.Helper.Utils;
+using BluetoothLeChat.Resources;
+using BluetoothLeCore.Enum;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
@@ -42,11 +44,18 @@ namespace BluetoothLeChat.ViewModels
         /// </param>
         void OnItemPressed(object itemType)
         {
-            int type = int.Parse(itemType.ToString());
-            if(type == 0)
+            if (!IsBluetoothON)
             {
-
+                AppUtils.ShowAlert(AppResources.EnableBluetooth, true);
+                return;
             }
+
+            int type = int.Parse(itemType.ToString());
+            BLERequestType requestType = type == 0
+                ? BLERequestType.ScanDevice : BLERequestType.PairedDevice;
+            AppUtils.PushAsync(AppUtils.GetPageFromRoute
+                (Helper.Enum.AppRoute.BluetoothList,
+                new BluetoothListViewModel(requestType)));
         }
 
         #endregion

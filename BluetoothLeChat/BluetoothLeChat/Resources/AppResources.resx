@@ -13,10 +13,37 @@
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
 
+	<data name="AppName" xml:space="preserve">
+		<value>BluetoothLE Chat</value>
+	</data>
 	<data name="ScanNewDevices" xml:space="preserve">
 		<value>Scan Available Devices</value>
 	</data>
+	<data name="AvailableDevices" xml:space="preserve">
+		<value>Available Devices</value>
+	</data>
 	<data name="PairedDevices" xml:space="preserve">
 		<value>Paired Devices</value>
+	</data>
+	<data name="EnableBluetooth" xml:space="preserve">
+		<value>Please enable the Bluetooth</value>
+	</data>
+	<data name="UnauthorizedState" xml:space="preserve">
+		<value>Unauthorized Error with Bluetooth settings.</value>
+	</data>
+	<data name="UnavailableState" xml:space="preserve">
+		<value>Unable to detect the Bluetooth configuration.</value>
+	</data>
+	<data name="UnknownError" xml:space="preserve">
+		<value>Oops, Something Went Wrong.</value>
+	</data>
+	<data name="BindableError" xml:space="preserve">
+		<value>Invalid bindable object is assigned.</value>
+	</data>
+	<data name="NoDeviceFound" xml:space="preserve">
+		<value>No nearby Bluetooth devices were found.</value>
+	</data>
+	<data name="NoPairedDeviceFound" xml:space="preserve">
+		<value>No Bluetooth devices were paired.</value>
 	</data>
 </root>
