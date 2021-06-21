@@ -73,6 +73,7 @@
     <Compile Include="PlatformEffects\GestureCollector\TouchCollector.cs" />
     <Compile Include="PlatformEffects\GestureCollector\TouchGestureRecognizer.cs" />
     <Compile Include="PlatformEffects\TouchEffectPlatform.cs" />
+    <Compile Include="PlatformEffects\EffectCommandPlatform.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

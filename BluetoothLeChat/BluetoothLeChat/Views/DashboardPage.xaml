@@ -42,10 +42,14 @@
               <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="0">
                 <templates:CardItemView Icon="{StaticResource DeviceIcon}"
                                         FontIconFamily="{StaticResource FontAwesomeRegular}"
-                                        ItemValue="{x:Static resources:AppResources.ScanNewDevices}"/>
+                                        ItemValue="{x:Static resources:AppResources.ScanNewDevices}"
+                                        ItemSelectedCommand="{Binding ItemCommand}"
+                                        ItemSelectedCommandParameter="0"/>
                 <templates:CardItemView Icon="{StaticResource PairedIcon}"
                                         FontIconFamily="{StaticResource FontAwesomeRegular}"
-                                        ItemValue="{x:Static resources:AppResources.PairedDevices}"/>
+                                        ItemValue="{x:Static resources:AppResources.PairedDevices}"
+                                        ItemSelectedCommand="{Binding ItemCommand}"
+                                        ItemSelectedCommandParameter="1"/>
               </StackLayout>
             </Frame>
             <control:FrameExt HeightRequest="60" WidthRequest="60" CornerRadius="30"

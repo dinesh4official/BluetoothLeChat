@@ -5,18 +5,16 @@
     x:Class="BluetoothLeChat.Views.Templates.CardItemView"
     xmlns:fontIcon="clr-namespace:BluetoothLeChat.Views.Templates"
     xmlns:effects="clr-namespace:BluetoothLeChat.Helper.Effects"
+    xmlns:behavior="clr-namespace:BluetoothLeChat.Helper.Behaviors"
     Margin="4,8,4,8" Padding="16,8,16,8"
     BackgroundColor="Transparent" x:Name="ItemView"
     HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-    <ContentView.GestureRecognizers>
-      <TapGestureRecognizer Command="{Binding ItemSelectedCommand, Source={x:Reference ItemView}}"/>
-    </ContentView.GestureRecognizers>
     <ContentView.Content>
        <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="20"
               BackgroundColor="{StaticResource PrimaryColor}" Padding="0"
               HasShadow="True">
           <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ColumnSpacing="0"
-                Padding="20"
+                Padding="20" x:Name="GridItemView"
                 effects:TouchEffect.Color="Silver">
               <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="50"/>
@@ -32,4 +30,7 @@
            </Grid>
        </Frame>
     </ContentView.Content>
+    <ContentView.Behaviors>
+        <behavior:CardItemBehavior EffectItemView="{x:Reference GridItemView}"/>
+    </ContentView.Behaviors>
 </ContentView>

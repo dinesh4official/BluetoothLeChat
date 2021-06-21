@@ -72,7 +72,7 @@ namespace BluetoothLeChat.Helper.Effects
 
         static void AddInputTransparentToElement(BindableObject obj)
         {
-            if (obj is View view && TouchEffect.GetColor(view) == Color.Default)
+            if (obj is View view && TouchEffect.GetColor(view) == Color.Default && EffectCommand.GetTap(view) == null && EffectCommand.GetLongTap(view) == null)
             {
                 view.InputTransparent = true;
             }

@@ -28,6 +28,7 @@
     <Folder Include="ViewModels\" />
     <Folder Include="Controls\" />
     <Folder Include="Helper\Effects\" />
+    <Folder Include="Helper\Behaviors\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Resources\AppResources.resx">

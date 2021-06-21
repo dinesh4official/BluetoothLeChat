@@ -16,7 +16,6 @@ using ListView = Android.Widget.ListView;
 using ScrollView = Android.Widget.ScrollView;
 using View = Android.Views.View;
 
-[assembly: ResolutionGroupName("BluetoothLeChat")]
 [assembly: ExportEffect(typeof(TouchEffectPlatform), "TouchEffect")]
 namespace BluetoothLeChat.Droid.PlatformEffects
 {

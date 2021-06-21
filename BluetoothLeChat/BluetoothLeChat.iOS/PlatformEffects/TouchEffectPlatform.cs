@@ -6,7 +6,7 @@ using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
-[assembly: ExportEffect(typeof(TouchEffectPlatform), nameof(TouchEffect))]
+[assembly: ExportEffect(typeof(TouchEffectPlatform), "TouchEffect")]
 namespace BluetoothLeChat.iOS.PlatformEffects
 {
     public class TouchEffectPlatform : PlatformEffect

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
@@ -40,6 +39,12 @@ namespace BluetoothLeChat.Views.Templates
         /// </summary>
         public static readonly BindableProperty ItemSelectedCommandProperty =
              BindableProperty.Create(nameof(ItemSelectedCommand), typeof(ICommand), typeof(CardItemView), null);
+
+        /// <summary>
+        /// Bindable property for <see cref="ItemSelectedCommandParameter"/>
+        /// </summary>
+        public static readonly BindableProperty ItemSelectedCommandParameterProperty =
+             BindableProperty.Create(nameof(ItemSelectedCommandParameter), typeof(object), typeof(CardItemView), null);
 
         #endregion
 
@@ -97,6 +102,15 @@ namespace BluetoothLeChat.Views.Templates
         {
             get { return (ICommand)GetValue(ItemSelectedCommandProperty); }
             set { SetValue(ItemSelectedCommandProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the command parameter for <see cref="ItemSelectedCommand"/>.
+        /// </summary>
+        public object ItemSelectedCommandParameter
+        {
+            get { return GetValue(ItemSelectedCommandParameterProperty); }
+            set { SetValue(ItemSelectedCommandParameterProperty, value); }
         }
 
         #endregion
