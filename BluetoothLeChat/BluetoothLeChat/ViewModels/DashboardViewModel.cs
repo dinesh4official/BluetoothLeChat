@@ -3,6 +3,7 @@ using System.Windows.Input;
 using BluetoothLeChat.Helper.Utils;
 using BluetoothLeChat.Resources;
 using BluetoothLeCore.Enum;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
@@ -42,12 +43,18 @@ namespace BluetoothLeChat.ViewModels
         /// <param name="itemType">
         /// 0 -> Indicates Scan item and 1 -> Indicates Paired item.
         /// </param>
-        void OnItemPressed(object itemType)
+        async void OnItemPressed(object itemType)
         {
             if (!IsBluetoothON)
             {
                 AppUtils.ShowAlert(AppResources.EnableBluetooth, true);
                 return;
+            }
+
+            PermissionStatus permissionStatus = await PermissionUtils.Instance.CheckAndRequestLocationPermission();
+            if (permissionStatus != PermissionStatus.Granted)
+            {
+                AppUtils.ShowAlert(AppResources.LocationPermissionDenied, false);
             }
 
             int type = int.Parse(itemType.ToString());

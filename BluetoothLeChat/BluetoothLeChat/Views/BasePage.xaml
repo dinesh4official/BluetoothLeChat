@@ -2,11 +2,7 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:behavior="clr-namespace:BluetoothLeChat.Helper.Behaviors"
     xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     iOS:Page.UseSafeArea="true" NavigationPage.HasNavigationBar="False"
     x:Class="BluetoothLeChat.Views.BasePage">
-    <ContentPage.Behaviors>
-        <behavior:BasePageBehavior/>
-    </ContentPage.Behaviors>
 </ContentPage>
