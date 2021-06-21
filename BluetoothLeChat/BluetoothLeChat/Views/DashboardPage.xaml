@@ -4,15 +4,21 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:templates="clr-namespace:BluetoothLeChat.Views.Templates"
     xmlns:resources="clr-namespace:BluetoothLeChat.Resources"
+    xmlns:viewModel="clr-namespace:BluetoothLeChat.ViewModels"
+    xmlns:control="clr-namespace:BluetoothLeChat.Controls"
     xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     iOS:Page.UseSafeArea="true" NavigationPage.HasNavigationBar="False"
     x:Class="BluetoothLeChat.Views.DashboardPage">
+    <ContentPage.BindingContext>
+        <viewModel:DashboardViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <AbsoluteLayout.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                        <GradientStop Color="{StaticResource BackgroundStartColor}" Offset="0.1"/>
-                        <GradientStop Color="{StaticResource BackgroundEndColor}" Offset="1.0"/>
+                        <GradientStop Color="{StaticResource BackgroundStartColor}" Offset="0.2"/>
+                        <GradientStop Color="{StaticResource BackgroundEndColor}" Offset="0.8"/>
+                        <GradientStop Color="Black" Offset="1.0"/>
                     </LinearGradientBrush>
             </AbsoluteLayout.Background>
             <StackLayout Spacing="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
@@ -42,14 +48,26 @@
                                         ItemValue="{x:Static resources:AppResources.PairedDevices}"/>
               </StackLayout>
             </Frame>
-            <Frame HeightRequest="60" WidthRequest="60" CornerRadius="30"
+            <control:FrameExt HeightRequest="60" WidthRequest="60" CornerRadius="30"
                    HorizontalOptions="Start" VerticalOptions="Start" Margin="0" Padding="0"
                    AbsoluteLayout.LayoutFlags="PositionProportional" HasShadow="True"
-                   BackgroundColor="{StaticResource EnableColor}"
                    AbsoluteLayout.LayoutBounds=".95,.95,60,60">
+                <control:FrameExt.Triggers>
+                    <DataTrigger TargetType="{x:Type control:FrameExt}" Binding="{Binding IsBluetoothON}"
+                                 Value="True">
+                        <Setter Property="ItemColor" Value="{StaticResource EnableColor}"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="{x:Type control:FrameExt}" Binding="{Binding IsBluetoothON}"
+                                 Value="False">
+                        <Setter Property="ItemColor" Value="{StaticResource DisableColor}"/>
+                    </DataTrigger>
+                </control:FrameExt.Triggers>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BLEStatusCommand}"/>
+                </Frame.GestureRecognizers>
                 <templates:FontIcon Icon="{StaticResource BluetoothIcon}"
                                     FontIconFamily="{StaticResource FontAwesomeBrands}"/>
-            </Frame>
+            </control:FrameExt>
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

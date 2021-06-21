@@ -73,6 +73,10 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Dependency\BluetoothService.cs" />
+    <Compile Include="Dependency\Message.cs" />
+    <Compile Include="PlatformEffects\TouchEffectPlatform.cs" />
+    <Compile Include="PlatformEffects\GestureCollector\TouchCollector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -114,11 +118,18 @@
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
     <Folder Include="Resources\xml\" />
+    <Folder Include="Dependency\" />
+    <Folder Include="PlatformEffects\" />
+    <Folder Include="PlatformEffects\GestureCollector\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BluetoothLeChat\BluetoothLeChat.csproj">
       <Project>{5B9D076B-61BE-4828-9E3A-54B42E97A765}</Project>
       <Name>BluetoothLeChat</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BluetoothLeCore\BluetoothLeCore.csproj">
+      <Project>{817CD040-0414-4B91-8CC8-FAA52991969D}</Project>
+      <Name>BluetoothLeCore</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -8,7 +8,7 @@ using Microsoft.AppCenter.Distribute;
 
 namespace BluetoothLeChat.Droid
 {
-    [Preserve(AllMembers = true)]
+    [Xamarin.Forms.Internals.Preserve(AllMembers = true)]
     [Activity(Label = "BluetoothLeChat", Icon = "@drawable/ic_bluetooth", Theme = "@style/MainTheme", MainLauncher = true,
         ScreenOrientation = ScreenOrientation.Portrait,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]

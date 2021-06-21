@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="BluetoothLeChat.Views.Templates.CardItemView"
     xmlns:fontIcon="clr-namespace:BluetoothLeChat.Views.Templates"
+    xmlns:effects="clr-namespace:BluetoothLeChat.Helper.Effects"
     Margin="4,8,4,8" Padding="16,8,16,8"
     BackgroundColor="Transparent" x:Name="ItemView"
     HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
@@ -12,8 +13,11 @@
     </ContentView.GestureRecognizers>
     <ContentView.Content>
        <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="20"
-              BackgroundColor="{StaticResource PrimaryColor}" HasShadow="True">
-          <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ColumnSpacing="0">
+              BackgroundColor="{StaticResource PrimaryColor}" Padding="0"
+              HasShadow="True">
+          <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ColumnSpacing="0"
+                Padding="20"
+                effects:TouchEffect.Color="Silver">
               <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="50"/>
                   <ColumnDefinition Width="*"/>

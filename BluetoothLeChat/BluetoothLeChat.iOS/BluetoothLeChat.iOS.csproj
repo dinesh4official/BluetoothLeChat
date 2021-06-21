@@ -68,6 +68,11 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Dependency\BluetoothService.cs" />
+    <Compile Include="Dependency\Message.cs" />
+    <Compile Include="PlatformEffects\GestureCollector\TouchCollector.cs" />
+    <Compile Include="PlatformEffects\GestureCollector\TouchGestureRecognizer.cs" />
+    <Compile Include="PlatformEffects\TouchEffectPlatform.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -144,6 +149,10 @@
       <Project>{5B9D076B-61BE-4828-9E3A-54B42E97A765}</Project>
       <Name>BluetoothLeChat</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BluetoothLeCore\BluetoothLeCore.csproj">
+      <Project>{817CD040-0414-4B91-8CC8-FAA52991969D}</Project>
+      <Name>BluetoothLeCore</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\fa-brands-400.ttf" />
@@ -151,5 +160,10 @@
     <BundleResource Include="Resources\fa-regular-400.ttf" />
     <BundleResource Include="Resources\fa-solid-900.ttf" />
     <BundleResource Include="Resources\EncodeSans-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dependency\" />
+    <Folder Include="PlatformEffects\" />
+    <Folder Include="PlatformEffects\GestureCollector\" />
   </ItemGroup>
 </Project>

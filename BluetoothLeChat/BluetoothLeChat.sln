@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BluetoothLeChat.iOS", "Blue
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BluetoothLeChat", "BluetoothLeChat\BluetoothLeChat.csproj", "{5B9D076B-61BE-4828-9E3A-54B42E97A765}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BluetoothLeCore", "BluetoothLeCore\BluetoothLeCore.csproj", "{817CD040-0414-4B91-8CC8-FAA52991969D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{5B9D076B-61BE-4828-9E3A-54B42E97A765}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{5B9D076B-61BE-4828-9E3A-54B42E97A765}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{5B9D076B-61BE-4828-9E3A-54B42E97A765}.Release|iPhone.Build.0 = Release|Any CPU
+		{817CD040-0414-4B91-8CC8-FAA52991969D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{817CD040-0414-4B91-8CC8-FAA52991969D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{817CD040-0414-4B91-8CC8-FAA52991969D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{817CD040-0414-4B91-8CC8-FAA52991969D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{817CD040-0414-4B91-8CC8-FAA52991969D}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{817CD040-0414-4B91-8CC8-FAA52991969D}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{817CD040-0414-4B91-8CC8-FAA52991969D}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{817CD040-0414-4B91-8CC8-FAA52991969D}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{817CD040-0414-4B91-8CC8-FAA52991969D}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{817CD040-0414-4B91-8CC8-FAA52991969D}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{817CD040-0414-4B91-8CC8-FAA52991969D}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{817CD040-0414-4B91-8CC8-FAA52991969D}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

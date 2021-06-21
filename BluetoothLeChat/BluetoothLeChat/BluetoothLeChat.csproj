@@ -23,6 +23,11 @@
     <Folder Include="Resources\" />
     <Folder Include="Views\" />
     <Folder Include="Views\Templates\" />
+    <Folder Include="Helper\" />
+    <Folder Include="Helper\Utils\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Controls\" />
+    <Folder Include="Helper\Effects\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Resources\AppResources.resx">
@@ -34,5 +39,8 @@
     <Compile Update="Resources\AppResources.Designer.cs">
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BluetoothLeCore\BluetoothLeCore.csproj" />
   </ItemGroup>
 </Project>
