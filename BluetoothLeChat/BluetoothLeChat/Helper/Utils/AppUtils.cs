@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using BluetoothLeChat.Helper.Enum;
 using BluetoothLeChat.ViewModels;
 using BluetoothLeChat.Views;
@@ -38,6 +39,11 @@ namespace BluetoothLeChat.Helper.Utils
             {
                 DependencyService.Get<IBluetoothService>().DisableBluetooth();
             }
+        }
+
+        public static async Task ShowAlertwithCancel(string title, string message, string cancel)
+        {
+            await Application.Current.MainPage.DisplayAlert(title, message, cancel);
         }
 
         public static Color GetResourceValueAsColor(string resourceName)

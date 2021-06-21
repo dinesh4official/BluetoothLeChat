@@ -46,4 +46,19 @@
 	<data name="NoPairedDeviceFound" xml:space="preserve">
 		<value>No Bluetooth devices were paired.</value>
 	</data>
+	<data name="LocationAlert" xml:space="preserve">
+		<value>Location Permission</value>
+	</data>
+	<data name="LocationAlertMessage" xml:space="preserve">
+		<value>Application requires location permission to find nearby bluetooth devices.</value>
+	</data>
+	<data name="LocationPermissionDenied" xml:space="preserve">
+		<value>Location permission is not yet granted.</value>
+	</data>
+	<data name="Settings" xml:space="preserve">
+		<value>Settings</value>
+	</data>
+	<data name="Understood" xml:space="preserve">
+		<value>Okay, got it!</value>
+	</data>
 </root>

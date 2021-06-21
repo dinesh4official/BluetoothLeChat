@@ -112,5 +112,35 @@ namespace BluetoothLeChat.Resources {
                 return ResourceManager.GetString("NoPairedDeviceFound", resourceCulture);
             }
         }
+        
+        internal static string LocationAlert {
+            get {
+                return ResourceManager.GetString("LocationAlert", resourceCulture);
+            }
+        }
+        
+        internal static string LocationAlertMessage {
+            get {
+                return ResourceManager.GetString("LocationAlertMessage", resourceCulture);
+            }
+        }
+        
+        internal static string LocationPermissionDenied {
+            get {
+                return ResourceManager.GetString("LocationPermissionDenied", resourceCulture);
+            }
+        }
+        
+        internal static string Settings {
+            get {
+                return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        internal static string Understood {
+            get {
+                return ResourceManager.GetString("Understood", resourceCulture);
+            }
+        }
     }
 }
